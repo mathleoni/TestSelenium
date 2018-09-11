@@ -22,15 +22,18 @@ public class Teste_Sel {
     public static void teste() throws InterruptedException{
         //System.setProperty("webdriver.chrome.driver", "/home/leoni/Desktop");
         WebDriver driver = new ChromeDriver();
-        driver.get("http://www.google.com/xhtml");
+        driver.get("https://www.google.com/?gl=us&hl=en&pws=0&gws_rd=cr");
         Thread.sleep(5000);  // Let the user actually see something!
         WebElement searchBox = driver.findElement(By.name("q"));
-        searchBox.sendKeys("teste");
+        searchBox.sendKeys("Lucy Rose Wiki");
         searchBox.submit();
         Thread.sleep(5000);  // Let the user actually see something!
         WebElement element = driver.findElement(By.className("rc"));
         String text = element.getText();
         System.out.println(text);
+        driver.findElement(By.linkText("Next")).click();
+        
+        
          
    
     }
